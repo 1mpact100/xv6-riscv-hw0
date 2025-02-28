@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     if (cc < 0)
     {
       fprintf(2, "Read error\n");
-      exit(-1);
+      exit(1);
     }
 
     if (c == '\n')
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     if (i == BUF_SIZE)
     {
       fprintf(2, "End of buffer\n");
-      exit(-1);
+      exit(1);
     }
 
     buf[i] = c;
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
   if (buf[i] == '\0')
   {
     fprintf(2, "Empty input\n");
-    exit(-1);
+    exit(1);
   }
 
   if (buf[i] == '-')
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
   if (buf[i] == ' ')
   {
     fprintf(2, "Incorrect input\n");
-    exit(-1);
+    exit(1);
   }
 
   while (buf[i] != ' ')
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     if (buf[i] == '\0')
     {
       fprintf(2, "No space here\n");
-      exit(-1);
+      exit(1);
     }
 
     c = buf[i];
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     if (c < '0' || c > '9')
     {
       fprintf(2, "Incorrect input\n");
-      exit(-1);
+      exit(1);
     }
 
     first[pos] = c;
@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
   if (buf[i] == '\0')
   {
     fprintf(2, "Only one number\n");
-    exit(-1);
+    exit(1);
   }
 
   pos = 0;
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
     if (c < '0' || c > '9')
     {
       fprintf(2, "Incorrect input\n");
-      exit(-1);
+      exit(1);
     }
 
     second[pos] = c;
